@@ -1,0 +1,45 @@
+Principais comandos docker:
+
+- iniciar o container: sudo docker run nomeDaImagem
+
+- iniciar o container em modo iterativo: sudo docker run -it nomeDaImagem
+
+- iniciar o container publicando porta: sudo docker run -p 8080:80 nomeDaImagem
+
+- iniciar o container descolado do terminal: sudo docker run -d nomeDaImagem
+
+- iniciar o container nomeado: sudo docker run --name nomeEscolhido nomeDaImagem
+
+- iniciar o container com espelhamento de pasta (antigo, cria pasta se não existir): sudo docker run -v pathLocal:pathContainer nomeDaImagem
+
+- iniciar o container com espelhamento de pasta (novo, dá erro se a pasta não existir): sudo docker run --mount type=bind,source=pathLocal,target=pathContainer nomeDaImagem
+
+- listar containers: sudo docker ps -a
+
+- remover container: sudo docker rm idOuNomeDoContainer
+
+- remover forçadamente container: sudo docker rm idOuNomeDoContainer -f
+
+- executar um comando em container rodando: sudo docker exec idOuNomeDoContainer comando
+
+- abrir um terminal em container rodando: sudo docker exec -it idOuNomeDoContainer bash
+
+- criar volume: sudo docker volume create nomeDoVolume
+
+- inspecionar volume: sudo docker volume inspect nomeDoVolume
+
+- listar volumes: sudo docker volume ls
+
+- iniciar o container com compartilhamento de volume (opção1): sudo docker run -v nomeDoVolume:pathContainer nomeDaImagem
+
+- iniciar o container com compartilhamento de volume (opção2): sudo docker run --mount type=volume,source=nomeDoVolume,target=pathContainer nomeDaImagem
+
+- apagar volumes não utilizados: sudo docker volume prune
+
+- remover volume: sudo docker volume rm nomeDoVolume
+
+- criar imagem a partir do Dockerfile: sudo docker build -t nomeDaImagemASerCriada pathDoDockerfile
+
+- listar as imagens existentes localmente: sudo docker images
+
+- remover uma imagem local: sudo docker rmi idOuNomeDaImagem
