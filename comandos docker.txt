@@ -16,9 +16,13 @@ Principais comandos docker:
 
 - listar containers: sudo docker ps -a
 
+- listar id dos containers: sudo docker ps -a -q
+
 - remover container: sudo docker rm idOuNomeDoContainer
 
 - remover forçadamente container: sudo docker rm idOuNomeDoContainer -f
+
+- remover todos os containers: sudo docker rm $(docker ps -a -q) -f
 
 - executar um comando em container rodando: sudo docker exec idOuNomeDoContainer comando
 
@@ -43,3 +47,15 @@ Principais comandos docker:
 - listar as imagens existentes localmente: sudo docker images
 
 - remover uma imagem local: sudo docker rmi idOuNomeDaImagem
+
+- listar as redes: sudo docker network ls
+
+- apagar redes não utilizadas: sudo docker network prune
+
+- inspecionar rede: sudo docker network inspect tipoDaRede
+
+- criar rede: sudo docker network create --driver tipoDaRede nomeDaRede
+
+- conectar um container a uma rede: sudo docker network connect nomeDaRede nomeDoContainer
+
+PS: para um container acessar alguma URL no host, deve-se utilizar o host.docker.internal
