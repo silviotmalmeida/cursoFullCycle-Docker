@@ -28,6 +28,8 @@ Principais comandos docker:
 
 - abrir um terminal em container rodando: sudo docker exec -it idOuNomeDoContainer bash
 
+- abrir o log de um container: sudo docker logs idOuNomeDoContainer
+
 - criar volume: sudo docker volume create nomeDoVolume
 
 - inspecionar volume: sudo docker volume inspect nomeDoVolume
@@ -43,6 +45,8 @@ Principais comandos docker:
 - remover volume: sudo docker volume rm nomeDoVolume
 
 - criar imagem a partir do Dockerfile: sudo docker build -t nomeDaImagemASerCriada pathDoDockerfile
+
+- criar imagem a partir do Dockerfile.prod: sudo docker build -t nomeDaImagemASerCriada pastaDoDockerfile.prod -f pathCompletoDoDockerfile.prod
 
 - listar as imagens existentes localmente: sudo docker images
 
