@@ -1,4 +1,5 @@
 #!/bin/bash
 
-# removendo o container
+# removendo os containers
 docker rm laravel -f
+docker rm nginx -f

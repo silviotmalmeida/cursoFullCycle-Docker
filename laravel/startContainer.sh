@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # criando a imagem
-sudo docker build -t silviotmalmeida/laravel:latest .
+# sudo docker build -t silviotmalmeida/laravel:dev .
 
 # subindo o container
 # o --rm apaga o container após o seu desligamento
@@ -9,4 +9,5 @@ sudo docker build -t silviotmalmeida/laravel:latest .
 # o -d cria o container desanexado do terminal
 # o --name permite nomear o container
 # o -p permite o mapeamento de porta entre o host e o container
-docker run --rm -d -it --name laravel -p 8000:8000 silviotmalmeida/laravel:latest
+# o -v permite o compartilhamento de pasta entre o host e o container
+docker run --rm -d -it --name laravel -p 8000:8000 silviotmalmeida/laravel:dev

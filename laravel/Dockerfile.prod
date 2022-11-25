@@ -1,0 +1,50 @@
+# iniciando o primeiro estágio de construção
+# definindo a imagem base e nomeando como bulder
+FROM php:7.4-cli AS stage1
+
+# definindo a pasta de trabalho a ser criada e focada no acesso
+WORKDIR /var/www
+
+# comandos a serem executados
+## instalando os pré-requisitos
+RUN apt-get update && \
+    apt-get install libzip-dev -y && \
+    docker-php-ext-install zip
+
+## instalando o composer
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
+    php composer-setup.php && \
+    php -r "unlink('composer-setup.php');"
+
+## instalando o laravel na pasta de trabalho
+RUN php composer.phar create-project --prefer-dist laravel/laravel laravel
+
+# -------------------------------------------------------------------------------
+# iniciando o segundo estágio de construção
+# definindo a imagem base otimizada
+FROM php:7.4-fpm-alpine
+
+# definindo a pasta de trabalho a ser criada e focada no acesso
+WORKDIR /var/www
+
+# removendo a pasta html default
+RUN rm -rf /var/www/html
+
+# copiando a pasta criada no primeiro estágio para o segundo estágio
+COPY --from=stage1 /var/www/laravel .
+
+# criando link simbólico da pasta var/www/laravel/public para a pasta var/www/html
+RUN ln -s public html
+
+# configurando as permissões da pasta de trabalho
+RUN chown -R www-data:www-data /var/www
+
+# expondo a porta para acesso de outros containers
+EXPOSE 9000
+
+# definindo o comando a ser executado após a inicialização
+# comando variável, podendo ser substituído por argumento na inicialização do container
+# se existir um ENTRYPOINT anterior, este conteúdo servirá de parâmetros para o ENTRYPOINT
+# se existir um CMD em imagem anterior, este conteúdo substituirá o anterior
+# complementando com a informação do host e porta
+CMD [ "php-fpm" ]

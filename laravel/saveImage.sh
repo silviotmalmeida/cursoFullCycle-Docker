@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # criando a imagem
-sudo docker build -t silviotmalmeida/laravel:latest .
+sudo docker build -t silviotmalmeida/laravel:dev .
 
 # salvando a imagem
-docker save silviotmalmeida/laravel > laravel.tar
+docker save silviotmalmeida/laravel:dev > laravel.tar
