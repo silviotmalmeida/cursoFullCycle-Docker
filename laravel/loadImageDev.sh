@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # carregando a imagem
-docker load < laravel.tar
+docker load < laravel.dev.tar

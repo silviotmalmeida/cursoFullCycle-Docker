@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # criando a imagem
-# sudo docker build -t silviotmalmeida/laravel:dev .
+# docker build -t silviotmalmeida/laravel:dev .
 
 # subindo o container
 # o --rm apaga o container após o seu desligamento
