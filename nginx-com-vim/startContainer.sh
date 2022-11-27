@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # criando a imagem
-sudo docker build -t silviotmalmeida/nginx-com-vim:latest .
+docker build -t silviotmalmeida/nginx-com-vim:latest .
 
 # subindo o container
 # o --rm apaga o container após o seu desligamento

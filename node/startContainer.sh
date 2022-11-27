@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # criando a imagem
-sudo docker build -t silviotmalmeida/node:latest .
+docker build -t silviotmalmeida/node:latest .
 
 # subindo o container
 # o --rm apaga o container após o seu desligamento
