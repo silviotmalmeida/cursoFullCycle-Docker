@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # criando a imagem
-docker build -t silviotmalmeida/node:prod . -f Dockerfile.prod
+# docker build -t silviotmalmeida/node:prod . -f Dockerfile.prod
 
 # subindo o container
 # o --rm apaga o container após o seu desligamento

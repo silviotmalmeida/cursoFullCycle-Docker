@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # criando a imagem
-docker build -t silviotmalmeida/node:latest .
+# docker build -t silviotmalmeida/node:dev . -f Dockerfile.dev
 
 # subindo o container
 # o --rm apaga o container após o seu desligamento
@@ -10,4 +10,4 @@ docker build -t silviotmalmeida/node:latest .
 # o --name permite nomear o container
 # o -p permite o mapeamento de porta entre o host e o container
 # o -v permite o compartilhamento de pasta entre o host e o container
-docker run --rm -it --name node -p 3000:3000 -v $(pwd)/app:/usr/src/app silviotmalmeida/node:latest bash
+docker run --rm -it --name node -p 3000:3000 -v $(pwd)/app:/usr/src/app silviotmalmeida/node:dev bash
