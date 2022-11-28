@@ -10,4 +10,4 @@
 # o --name permite nomear o container
 # o -p permite o mapeamento de porta entre o host e o container
 # o -v permite o compartilhamento de pasta entre o host e o container
-docker run --rm -d -it --name laravel -p 8000:8000 silviotmalmeida/laravel:dev
+docker run --rm -d -it --name laravel -p 8080:8080 silviotmalmeida/laravel:dev

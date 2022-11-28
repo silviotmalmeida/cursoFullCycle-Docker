@@ -18,6 +18,8 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
 ## instalando o laravel
 RUN php composer.phar create-project --prefer-dist laravel/laravel laravel
 
+
+
 # definindo o comando a ser executado após a inicialização
 # comando fixo
 # se existir um ENTRYPOINT em imagem anterior, este conteúdo substituirá o anterior
@@ -29,4 +31,4 @@ ENTRYPOINT [ "php","laravel/artisan","serve" ]
 # se existir um ENTRYPOINT anterior, este conteúdo servirá de parâmetros para o ENTRYPOINT
 # se existir um CMD em imagem anterior, este conteúdo substituirá o anterior
 # complementando com a informação do host e porta
-CMD [ "--host=0.0.0.0", "--port=8000" ]
+CMD [ "--host=0.0.0.0", "--port=8080" ]

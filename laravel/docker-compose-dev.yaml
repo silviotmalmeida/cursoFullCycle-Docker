@@ -1,0 +1,12 @@
+version: '3'
+
+services: 
+
+  laravel:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    image: silviotmalmeida/laravel:dev
+    container_name: laravel
+    ports: 
+      - "8080:8080"

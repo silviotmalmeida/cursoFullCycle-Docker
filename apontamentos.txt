@@ -63,3 +63,17 @@ Principais comandos docker:
 - conectar um container a uma rede: sudo docker network connect nomeDaRede nomeDoContainer
 
 PS: para um container acessar alguma URL no host, deve-se utilizar o host.docker.internal
+
+-----------------------------------------------------------------------------------------
+
+Principais comandos docker-compose:
+
+- iniciar os containers: sudo docker-compose up
+
+- iniciar os containers descolados do terminal: sudo docker-compose up -d
+
+- iniciar os containers recriando as imagens: sudo docker-compose up --build
+
+- parar os containers: sudo docker-compose down
+
+- mostrar os containers que estão rodando: sudo docker-compose ps
