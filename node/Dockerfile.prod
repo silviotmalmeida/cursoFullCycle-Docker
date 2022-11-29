@@ -13,5 +13,5 @@ COPY app .
 # definindo o comando a ser executado após a inicialização
 # comando fixo
 # se existir um ENTRYPOINT em imagem anterior, este conteúdo substituirá o anterior
-# iniciando o servidor de desenvolvimento do laravel
+# iniciando o app
 ENTRYPOINT [ "node","index.js" ]

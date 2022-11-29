@@ -3,10 +3,7 @@ version: '3'
 services: 
 
   node:
-    build: 
-      context: .
-      dockerfile: Dockerfile.dev
-    image: silviotmalmeida/node:dev
+    image: silviotmalmeida/node:prod
     container_name: node
     entrypoint: dockerize -wait tcp://mysql:3306 -timeout 20s docker-entrypoint.sh
     networks: 
