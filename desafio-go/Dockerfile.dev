@@ -1,5 +1,0 @@
-# definindo a imagem base
-FROM golang:latest
-
-# definindo a pasta de trabalho a ser criada e focada no acesso
-WORKDIR /src/app

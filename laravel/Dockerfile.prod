@@ -1,5 +1,5 @@
 # iniciando o primeiro estágio de construção
-# definindo a imagem base e nomeando como bulder
+# definindo a imagem base e nomeando como stage1
 FROM php:7.4-cli AS stage1
 
 # definindo a pasta de trabalho a ser criada e focada no acesso
